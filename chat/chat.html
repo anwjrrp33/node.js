@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+</head>
+<body>
+
+<h1>Chat Page</h1>
+
+<div class="inputDiv">
+    <input type="text" id="msgInput">
+    <button id="sendBtn">Send</button>
+</div>
+
+<div class="msgDiv">
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+
+    var inputMsg = $("#msgInput");
+    var sendBtn = $("#sendBtn");
+
+    sendBtn.on("click", function() {
+        socket.emit("userMsg", {content: inputMsg.val()});
+    });
+
+    socket.on("serverMsg", function (msg) {
+        console.log("FROM SERVER: " + msg);
+    });
+
+    /*setTimeout(() => {
+        socket.emit("jr1");
+    }, 1000);
+
+    socket.on("sjr1", (msg) => {
+        console.log(msg);
+    });*/
+</script>
+
+</body>
+</html>

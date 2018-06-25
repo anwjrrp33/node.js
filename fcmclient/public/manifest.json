@@ -1,0 +1,12 @@
+{
+  "name": "SSH",
+  "short_name": "SSH",
+  "icons": [{
+    "src": "images/icon2.png",
+    "sizes": "225x225"
+  }],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "gcm_sender_id": "103953800507"
+
+}
