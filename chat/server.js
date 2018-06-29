@@ -34,7 +34,7 @@ function ChatRoom(name){
     this.name = name;
     this.clients = [];
 }
-조성범
+
 ChatRoom.prototype.show = function() {
     return this.name;
 }
